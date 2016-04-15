@@ -8,7 +8,7 @@
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
   <!-- build:css(.) styles/vendor.css -->
   <!-- bower:css -->
-  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
   <!-- endbower -->
   <!-- endbuild -->
   <!-- build:css(.tmp) styles/main.css -->
@@ -40,18 +40,15 @@
       <div class="collapse navbar-collapse" id="js-navbar-collapse">
 
         <ul class="nav navbar-nav">
-          <li class="active"><a href="#/">Home</a></li>
-          <li><a ng-href="#/">About</a></li>
-          <li><a ng-href="#/">Contact</a></li>
+          <li class="active"><a ui-sref="main">Home</a></li>
+          <li><a ui-sref="register">Register</a></li>
         </ul>
       </div>
     </div>
   </div>
 </div>
 
-<div class="container">
-  <div ng-include="'views/main.html'" ng-controller="MainCtrl"></div>
-</div>
+<div ui-view></div>
 
 <div class="footer">
   <div class="container">
@@ -78,12 +75,14 @@
 <script src="bower_components/jquery/dist/jquery.js"></script>
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
 
 <!-- build:js({.tmp,app}) scripts/scripts.js -->
 <script src="scripts/app.js"></script>
 <script src="scripts/controllers/main.js"></script>
+<script src="scripts/app.config.js"></script>
 <!-- endbuild -->
 </body>
 </html>
