@@ -10,7 +10,16 @@ var UserSchema = new mongoose.Schema({
   password: String
 });
 
-exports.model= mongoose.model('User', UserSchema);
+
+UserSchema.methods.toJSON = function () {
+  var user = this.toObject();
+  delete  user.password;
+  console.log(user);
+
+  return user;
+};
+
+exports.model = mongoose.model('User', UserSchema);
 
 UserSchema.pre('save', function (next) {
   var user = this;
