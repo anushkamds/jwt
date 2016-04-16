@@ -26,7 +26,7 @@
 <!-- Add your site or application content here -->
 <div class="header">
   <div class="navbar navbar-default" role="navigation">
-    <div class="container">
+    <div class="container" ng-cloak>
       <div class="navbar-header">
 
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
@@ -51,6 +51,8 @@
 </div>
 
 <div ui-view></div>
+<div class="alert alert-{{alert.type}} animated main-alert"
+     ng-class="{'flipInY' :alert.show, 'flipOutY' :!alert.show, 'alert-hideen':!alert.hasBeenShown}"><strong>{{alert.title}}</strong>{{alert.message}}</div>
 
 <div class="footer">
   <div class="container">
@@ -77,6 +79,7 @@
 <script src="bower_components/jquery/dist/jquery.js"></script>
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
 
@@ -86,6 +89,7 @@
 <script src="scripts/app.config.js"></script>
 <script src="scripts/directives/validateEquals.js"></script>
 <script src="scripts/controllers/register.js"></script>
+<script src="scripts/services/alert.js"></script>
 <!-- endbuild -->
 </body>
 </html>
